@@ -1,0 +1,16 @@
+import prisma from "../../lib/prisma";
+
+import { validateRoute } from "../../lib/auth";
+
+export default validateRoute(async (req, res, user) => {
+  const playlist = await prisma.playlist.findMany({
+    where: {
+      userId: user.id,
+    },
+    orderBy: {
+      name: "asc",
+    },
+  });
+
+  res.status(200).json(playlist);
+});
