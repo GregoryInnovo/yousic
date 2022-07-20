@@ -108,7 +108,7 @@ const Sidebar = () => {
           </List>
         </Box>
         <Divider color="gray.800" />
-        {/* <Box height="40%" overflowY="auto" paddingY="20px">
+        <Box height="40%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
             {playlists.map((playlist) => (
               <ListItem paddingX="20px" key={playlist.id}>
@@ -120,7 +120,7 @@ const Sidebar = () => {
               </ListItem>
             ))}
           </List>
-        </Box> */}
+        </Box>
       </Box>
     </Box>
   );
