@@ -18,6 +18,7 @@ import {
   MdPlaylistAdd,
   MdFavorite,
 } from "react-icons/md";
+import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 
 const navMenu = [
   {
@@ -110,15 +111,26 @@ const Sidebar = () => {
         <Divider color="gray.800" />
         <Box height="40%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
-            {playlists.map((playlist) => (
-              <ListItem paddingX="20px" key={playlist.id}>
-                <LinkBox>
-                  <NextLink href="/" passHref>
-                    <LinkOverlay>{playlist.name}</LinkOverlay>
-                  </NextLink>
-                </LinkBox>
-              </ListItem>
-            ))}
+            {playlists?.map(
+              (playlist: {
+                id: Key;
+                name: boolean | ReactChild | ReactFragment | ReactPortal;
+              }) => (
+                <ListItem paddingX="20px" key={playlist.id}>
+                  <LinkBox>
+                    <NextLink
+                      href={{
+                        pathname: "/playlist/[id]",
+                        query: { id: playlist.id },
+                      }}
+                      passHref
+                    >
+                      <LinkOverlay>{playlist.name}</LinkOverlay>
+                    </NextLink>
+                  </LinkBox>
+                </ListItem>
+              )
+            )}
           </List>
         </Box>
       </Box>
