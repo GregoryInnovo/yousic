@@ -28,7 +28,7 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
         height="100px"
         borderBottom="white 1px solid"
       >
-        <NextImage src="/logo.png" height={60} width={180} />
+        <NextImage src="/logo.jpeg" height={120} width={120} />
       </Flex>
       <Flex justify="center" align="center" height="calc(100vh - 100px)">
         <Box padding="50px" bg="gray.900" borderRadius="6px">
