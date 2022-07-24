@@ -26,7 +26,7 @@ const Playlist = ({ playlist }) => {
       roundImage={false}
       title={playlist.name}
       subtitle="playlist"
-      description={`${playlist.songs.lenght} songs`}
+      description={`${playlist.songs.length} songs`}
       image={`https://picsum.photos/400?random=${playlist.id}`}
     >
       <SongTable songs={playlist.songs} />
